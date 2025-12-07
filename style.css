@@ -212,28 +212,30 @@ body {
 /* ====================================================== */
 #musicPlayer {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #87CEEB;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 999999;
+    bottom: 10px;
+    right: 10px;
+    backdrop-filter: blur(5px);
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
 }
 
 #musicBtn {
-    background: rgb(245, 245, 245);
+    background: #5e8fc2; /* ← cambia este a tus colores */
+    color: white;
+    font-size: 15px;
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 5px 5px;
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: bold;
-    color: #333;
+    transition: 0.3s;
 }
+
+#musicBtn:hover {
+    background: #4774a5;
+}
+
 
 
 /* ====================================================== */
@@ -629,12 +631,12 @@ font-family: 'Great Vibes', cursive;
     left: calc(30% + 220px);
 }
 .slide .item:nth-child(5){
-    left: calc(40% + 220px);
+    left: calc(40% + 320px);
 }
 
 /* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 6){
-    left: calc(50% + 220px);
+    left: calc(50% + 320px);
     opacity: 0;
 }
 
@@ -784,7 +786,6 @@ font-family: 'Great Vibes', cursive;
 /* =============================================================== */
 
 @media (max-width: 400px) {
-
     .ContenedorPrincipal,
     .SegundoContenedor,
     .TercerContenedor {
@@ -900,9 +901,138 @@ font-family: 'Great Vibes', cursive;
     width: 350px;
 }
 
+.slide .item:nth-child(3){
+    bottom:20%;
+    left: 70%;
+}
+.slide .item:nth-child(4){
+    left: calc(40% + 120px);
+}
+.slide .item:nth-child(5){
+    left: calc(10% + 120px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 120px);
+    opacity: 0;
+}
 
 
 
+}
 
 
+
+/* =============================== */
+/*   Ajustes para teléfonos 320px  */
+/* =============================== */
+@media (max-width: 320px) {
+
+    .ContenedorPrincipal,
+    .SegundoContenedor,
+    .TercerContenedor {
+        width: 100%;
+        height: 1200px; /* un poco más compacto */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .imagen1 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #countdown { font-size: 16px; }
+
+    .titulo-seccion { font-size: 24px; }
+
+    .contenedor-countdown {
+        width: 80%;
+        padding: 8px;
+    }
+
+    .mapa-fotos-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .mapa iframe { height: 220px; }
+    .mapa p { font-size: 26px; }
+    .mapa h1 { font-size: 12px; }
+
+    .direccion,
+    .direccion2 {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .iglesia { height: 220px; }
+
+    .btn-elegante {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    /* --------- Secciones que tenías muy grandes -------- */
+
+    .cuartoContendor {
+        width: 300px;  /* antes: 350px */
+        height: 360px;
+    }
+
+    .itinerario-section {
+        width: 300px; /* antes: 340px */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .icono-tiempo { width: 50px; }
+
+    .contenido-tiempo h3 { font-size: 20px; }
+    .contenido-tiempo p  { font-size: 16px; }
+
+    .linea-tiempo {
+        width: 80%;
+    }
+
+    .linea-tiempo::before {
+        left: 80px;
+    }
+
+    .item-tiempo::before {
+        left: 40px;
+    }
+
+    .sextoContendor {
+        width: 280px; /* antes: 300 */
+        height: auto;
+    }
+
+    .container {
+        width: 200px; /* antes: 350 */
+        height: 400px;
+    }
+
+.slide .item:nth-child(3){
+    bottom:20%;
+    left: 70%;
+}
+.slide .item:nth-child(4){
+    left: calc(30% + 120px);
+}
+.slide .item:nth-child(5){
+    left: calc(10% + 100px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 100px);
+    opacity: 0;
+}
+
+
+   
 }
