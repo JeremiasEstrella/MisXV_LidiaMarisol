@@ -240,7 +240,7 @@ body {
 /*          CONTENEDOR 4 (Dress Code)                     */
 /* ====================================================== */
 .cuartoContendor {
-    width: 600px;
+    max-width: 600px;
     height: 500px;
     padding: 10px;
     background-color: white;
@@ -331,15 +331,6 @@ body {
     position: relative;
 }
 
-.linea-tiempo::before {
-    content: "";
-    position: absolute;
-    left: 100px;
-    width: 3px;
-    height: 100%;
-    background: #5D9CCF;
-    border-radius: 2px;
-}
 
 .item-tiempo {
     width: 300px;
@@ -374,6 +365,194 @@ body {
     font-size: 22px;
     color: #5D9CCF;
 }
+
+
+
+.sextoContendor {
+    max-width: 600px;
+    height: 400px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Textos */
+.tituloconfirmacion {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #808080;
+    padding-top: 30px;
+}
+
+
+
+.tituloc {
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #87CEEB;
+}
+
+.subtituloconfirmacion,
+.informacionconfirmacion {
+    font-size: 12px;
+    color: #808080;
+    
+}
+
+
+.botones-asistencia {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.botones-asistencia button {
+    padding: 12px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #87CEEB;
+    color: white;
+    transition: 0.3s;
+}
+
+.botones-asistencia button:hover {
+    background-color: #5D9CCF;
+}
+
+/* FORMULARIO OCCUPANDO EL CONTENEDOR */
+#formOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+    border-radius: 40px;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s;
+    z-index: 9999;
+}
+
+#formContainer {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    animation: slideUp 0.45s ease-out;
+}
+
+#formContainer h2 {
+    text-align: center;
+}
+
+#formContainer input,
+#formContainer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#enviarForm {
+    width: 100%;
+    padding: 12px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#cerrarForm {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#formRechazoOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+    border-radius: 40px;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s;
+    z-index: 9999;
+}
+
+#formRechazoContainer {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    animation: slideUp 0.45s ease-out;
+}
+
+#formRechazoContainer input,
+#formRechazoContainer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#enviarRechazo {
+    width: 100%;
+    padding: 12px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cerrarForm {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
 
 
 /* ====================================================== */
@@ -428,6 +607,10 @@ body {
 }
 
 
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
 
 /* =============================================================== */
 /* =====================  RESPONSIVE 400PX  ====================== */
@@ -497,6 +680,7 @@ body {
     .cuartoContendor {
     width: 350px;
     height: 400px;
+
 }
 
 
@@ -534,5 +718,9 @@ body {
         border-radius: 2px;
     }
 
-
+.sextoContendor {
+    width: 350px;
+    height: 420px;
+    border-radius: 10px;
+}
 }

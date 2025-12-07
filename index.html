@@ -55,29 +55,7 @@ let temporizador = setInterval(function() {
     <audio id="player" src="cancion/cancion.mp3" autoplay loop></audio>
 </div>
 
-<script>
-let audio = document.getElementById("player");
-let boton = document.getElementById("musicBtn");
 
-// Desmutear y forzar play en el primer clic
-boton.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.muted = false;
-        audio.play(); // <-- Esto hace que sí arranque
-        boton.textContent = "🔊";
-        return;
-    }
-
-    // Alternar mute/unmute
-    if (audio.muted) {
-        audio.muted = false;
-        boton.textContent = "🔊";
-    } else {
-        audio.muted = true;
-        boton.textContent = "🔇";
-    }
-});
-</script>
 
 <section class="SegundoContenedor">
 
@@ -128,8 +106,231 @@ boton.addEventListener("click", () => {
 </div>
 </section>
 
+
+
+<section class="cuartoContendor scroll-anim"">
+
+    <div class="titulodress scroll-anim">Código de vestimenta</div>
+
+    <figure class="imagendress scroll-anim">
+        <img src="imagenes/dresscode.png" alt="Dresscode" class="dresscode">
+    </figure>
+
+    <div class="titulod scroll-anim"><b>Formal</b></div>
+    <div class="subtitulodress scroll-anim"><b>Colores no permitidos</b></div>
+    <div class="informaciondress scroll-anim">Azul cielo, Blanco, Plata.</div>
+</section>
+
+
+<section class="itinerario-section">
+
+    <h2 class="titulo-itinerario scroll-anim">Itinerario</h2>
+    <p class="subtitulo-itinerario scroll-anim">¡Los detalles del gran día!</p>
+
+    <div class="linea-tiempo">
+
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/misa.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>7:00 p.m.</h3>
+                <p>Misa</p>
+            </div>
+        </div>
+
+        <div class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/recepcion.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>8:30 p.m.</h3>
+                <p>Recepción</p>
+            </div>
+        </div>
+
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/presentacion.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>9:30 p.m.</h3>
+                <p>Presentación</p>
+            </div>
+        </div>
+
+        <div class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/cena.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>10:00 p.m.</h3>
+                <p>Cena</p>
+            </div>
+        </div>
+
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/vals.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>10:15 p.m.</h3>
+                <p>Vals</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="sextoContendor scroll-anim"">
+
+    <div class="tituloconfirmacion scroll-anim">Confirma tu asistencia</div>
+
+    <div class="tituloc scroll-anim"><b>Gracias por compartir este dia tan importante.</b></div>
+    
+    <div class="tituloconfirmacion scroll-anim">Porfavor confirma tu asistencia.</div>
+<!-- BOTONES -->
+<div class="botones-asistencia">
+    <button id="btnConfirmar">Confirmar asistencia</button>
+    <button id="btnRechazar">No asistiré</button>
+</div>
+
+<!-- FORMULARIO CONFIRMACIÓN -->
+<div id="formOverlay">
+    <div id="formContainer">
+        <span class="cerrarForm">✕</span>
+        <h2>Confirmar asistencia</h2>
+
+        <form id="formAsistencia">
+            <label>😊Nombre completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label>👥Número de personas:</label>
+            <input type="number" id="personas" min="1" required>
+
+            <label>📝Mensaje adicional:</label>
+            <textarea id="mensaje"></textarea>
+
+            <button type="submit" id="enviarForm">Enviar por WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<!-- FORMULARIO RECHAZO -->
+<div id="formRechazoOverlay">
+    <div id="formRechazoContainer">
+        <span class="cerrarForm" id="cerrarRechazo">✕</span>
+        <h2>No asistiré</h2>
+
+        <form id="formRechazo">
+            <label>😢Nombre completo:</label>
+            <input type="text" id="nombreRechazo" required>
+
+            <label>📝Motivo (opcional):</label>
+            <textarea id="motivoRechazo"></textarea>
+
+            <button type="submit" id="enviarRechazo">Enviar por WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+</section>
+
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+const numWhats = "5219992467023"; // Número de WhatsApp con código de país
+
+/* BOTONES */
+let btnConfirmar = document.getElementById("btnConfirmar");
+let btnRechazar = document.getElementById("btnRechazar");
+
+/* FORMULARIOS */
+let formOverlay = document.getElementById("formOverlay");
+let formRechazoOverlay = document.getElementById("formRechazoOverlay");
+
+/* CERRAR ÍCONOS */
+let cerrarFormularios = document.querySelectorAll(".cerrarForm");
+
+/* FORMULARIOS */
+let formAsistencia = document.getElementById("formAsistencia");
+let formRechazo = document.getElementById("formRechazo");
+
+/* ABRIR FORMULARIO CONFIRMACIÓN */
+btnConfirmar.addEventListener("click", () => {
+    formOverlay.style.display = "flex";
+});
+
+/* ABRIR FORMULARIO RECHAZO */
+btnRechazar.addEventListener("click", () => {
+    formRechazoOverlay.style.display = "flex";
+});
+
+/* CERRAR TODOS LOS FORMULARIOS */
+cerrarFormularios.forEach(btn => {
+    btn.addEventListener("click", () => {
+        formOverlay.style.display = "none";
+        formRechazoOverlay.style.display = "none";
+    });
+});
+
+/* ENVIAR CONFIRMACIÓN */
+formAsistencia.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let personas = document.getElementById("personas").value;
+    let mensaje = document.getElementById("mensaje").value;
+
+    let texto = `CONFIRMACIÓN DE ASISTENCIA%0A
+Nombre: ${nombre}%0A
+Número de personas: ${personas}%0A
+Mensaje: ${mensaje}`;
+
+    window.open(`https://wa.me/${numWhats}?text=${texto}`, "_blank");
+});
+
+/* ENVIAR RECHAZO */
+formRechazo.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombreRechazo").value;
+    let motivo = document.getElementById("motivoRechazo").value;
+
+    let texto = `NO ASISTIRÁ%0A
+Nombre: ${nombre}%0A
+Motivo: ${motivo ? motivo : "No especificado"}`;
+
+    window.open(`https://wa.me/${numWhats}?text=${texto}`, "_blank");
+});
+</script>
+
+
+
+
+
+
+<script>
+let audio = document.getElementById("player");
+let boton = document.getElementById("musicBtn");
+
+// Desmutear y forzar play en el primer clic
+boton.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play(); // <-- Esto hace que sí arranque
+        boton.textContent = "🔊";
+        return;
+    }
+
+    // Alternar mute/unmute
+    if (audio.muted) {
+        audio.muted = false;
+        boton.textContent = "🔊";
+    } else {
+        audio.muted = true;
+        boton.textContent = "🔇";
+    }
+});
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
 
   // selector de los elementos que queremos animar al entrar/salir
   const selectores = [
@@ -199,73 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   elementos.forEach(el => io.observe(el));
 });
-</script>
-
-<section class="cuartoContendor scroll-anim"">
-
-    <div class="titulodress scroll-anim">Código de vestimenta</div>
-
-    <figure class="imagendress scroll-anim">
-        <img src="imagenes/dresscode.png" alt="Dresscode" class="dresscode">
-    </figure>
-
-    <div class="titulod scroll-anim"><b>Formal</b></div>
-    <div class="subtitulodress scroll-anim"><b>Colores no permitidos</b></div>
-    <div class="informaciondress scroll-anim">Azul cielo, Blanco, Plata.</div>
-</section>
-
-
-<section class="itinerario-section">
-
-    <h2 class="titulo-itinerario scroll-anim">Itinerario</h2>
-    <p class="subtitulo-itinerario scroll-anim">¡Los detalles del gran día!</p>
-
-    <div class="linea-tiempo">
-
-        <div class="item-tiempo scroll-anim from-left">
-            <img src="imagenes/misa.png" class="icono-tiempo">
-            <div class="contenido-tiempo">
-                <h3>7:00 p.m.</h3>
-                <p>Misa</p>
-            </div>
-        </div>
-
-        <div class="item-tiempo scroll-anim from-right">
-            <img src="imagenes/recepcion.png" class="icono-tiempo">
-            <div class="contenido-tiempo">
-                <h3>8:30 p.m.</h3>
-                <p>Recepción</p>
-            </div>
-        </div>
-
-        <div class="item-tiempo scroll-anim from-left">
-            <img src="imagenes/presentacion.png" class="icono-tiempo">
-            <div class="contenido-tiempo">
-                <h3>9:30 p.m.</h3>
-                <p>Presentación</p>
-            </div>
-        </div>
-
-        <div class="item-tiempo scroll-anim from-right">
-            <img src="imagenes/cena.png" class="icono-tiempo">
-            <div class="contenido-tiempo">
-                <h3>10:00 p.m.</h3>
-                <p>Cena</p>
-            </div>
-        </div>
-
-        <div class="item-tiempo scroll-anim from-left">
-            <img src="imagenes/vals.png" class="icono-tiempo">
-            <div class="contenido-tiempo">
-                <h3>10:15 p.m.</h3>
-                <p>Vals</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<script>
 document.addEventListener("DOMContentLoaded", () => {
 
     const items = document.querySelectorAll(".scroll-anim");
@@ -286,7 +420,5 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-
 </body>
-
 </html>
