@@ -59,7 +59,16 @@ let temporizador = setInterval(function() {
 let audio = document.getElementById("player");
 let boton = document.getElementById("musicBtn");
 
+// Desmutear y forzar play en el primer clic
 boton.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play(); // <-- Esto hace que sí arranque
+        boton.textContent = "🔊";
+        return;
+    }
+
+    // Alternar mute/unmute
     if (audio.muted) {
         audio.muted = false;
         boton.textContent = "🔊";
@@ -69,6 +78,7 @@ boton.addEventListener("click", () => {
     }
 });
 </script>
+
 <section class="SegundoContenedor">
 
 </section>
@@ -191,105 +201,90 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<section class="cuartoContendor scroll-anim"">
+
+    <div class="titulodress scroll-anim">Código de vestimenta</div>
+
+    <figure class="imagendress scroll-anim">
+        <img src="imagenes/diseños de la ´pagina lidia-06.png" alt="Dresscode" class="dresscode">
+    </figure>
+
+    <div class="titulod scroll-anim"><b>Formal</b></div>
+    <div class="subtitulodress scroll-anim"><b>Colores no permitidos</b></div>
+    <div class="informaciondress scroll-anim">Azul cielo, Blanco, Plata.</div>
+</section>
 
 
-<section class="itinerario-section" class="item-tiempo scroll-anim from-left">
+<section class="itinerario-section">
 
     <h2 class="titulo-itinerario scroll-anim">Itinerario</h2>
     <p class="subtitulo-itinerario scroll-anim">¡Los detalles del gran día!</p>
 
     <div class="linea-tiempo">
 
-        <!-- ITEM 1 -->
-        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right">
-            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/misa.png" class="icono-tiempo">
             <div class="contenido-tiempo">
                 <h3>7:00 p.m.</h3>
                 <p>Misa</p>
             </div>
         </div>
 
-        <!-- ITEM 2 -->
-        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-left">
-            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+        <div class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/recepcion.png" class="icono-tiempo">
             <div class="contenido-tiempo">
                 <h3>8:30 p.m.</h3>
                 <p>Recepción</p>
             </div>
         </div>
 
-        <!-- ITEM 3 -->
-        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right" >
-            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/presentacion.png" class="icono-tiempo">
             <div class="contenido-tiempo">
                 <h3>9:30 p.m.</h3>
                 <p>Presentación</p>
             </div>
         </div>
 
-         <!-- ITEM 4 -->
-        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-left">
-            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+        <div class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/cena.png" class="icono-tiempo">
             <div class="contenido-tiempo">
                 <h3>10:00 p.m.</h3>
                 <p>Cena</p>
             </div>
         </div>
 
-         <!-- ITEM 5 -->
-        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right">
-            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+        <div class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/vals.png" class="icono-tiempo">
             <div class="contenido-tiempo">
                 <h3>10:15 p.m.</h3>
                 <p>Vals</p>
             </div>
         </div>
-    </div>
 
+    </div>
 </section>
 
 <script>
-const elementos = document.querySelectorAll('.scroll-anim');
+document.addEventListener("DOMContentLoaded", () => {
 
-function activarAnimaciones() {
+    const items = document.querySelectorAll(".scroll-anim");
 
-    let index = 0; // para alternar izquierda-derecha
-
-    elementos.forEach(el => {
-
-        const rect = el.getBoundingClientRect();
-        const visible = rect.top < window.innerHeight - 60 && rect.bottom > 60;
-
-        if (!visible) return;
-
-        // Reiniciar animación
-        el.classList.remove("animate-left", "animate-right", "animate-top");
-
-        void el.offsetWidth; // fuerza reinicio
-
-        // Título y subtítulo animan desde arriba
-        if (el.classList.contains("titulo-itinerario") || 
-            el.classList.contains("subtitulo-itinerario")) {
-            el.classList.add("animate-top");
-            return;
-        }
-
-        // Items del itinerario → alternar izquierda/derecha
-        if (el.classList.contains("item-tiempo")) {
-            if (index % 2 === 0) {
-                el.classList.add("animate-left");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
             } else {
-                el.classList.add("animate-right");
+                // permite que se reactive cuando vuelves a bajar
+                entry.target.classList.remove("visible");
             }
-            index++;
-        }
+        });
+    }, { threshold: 0.2 });
 
-    });
-}
-
-window.addEventListener("scroll", activarAnimaciones);
-window.addEventListener("load", activarAnimaciones);
+    items.forEach(i => observer.observe(i));
+});
 </script>
+
 
 
 </body>

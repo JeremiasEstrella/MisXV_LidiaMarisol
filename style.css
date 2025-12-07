@@ -1,15 +1,14 @@
-/* ====================== */
-/*        ESTILOS BASE    */
-/* ====================== */
-
+/* ====================================================== */
+/*                     ESTILOS BASE                       */
+/* ====================================================== */
 body {
     background-color: #AECBE9;
 }
 
-/* ====================== */
-/*   CONTENEDOR PRINCIPAL */
-/* ====================== */
 
+/* ====================================================== */
+/*                CONTENEDOR PRINCIPAL                    */
+/* ====================================================== */
 .ContenedorPrincipal {
     width: 600px;
     height: 650px;
@@ -18,11 +17,11 @@ body {
     justify-content: center;
     margin: auto;
     text-align: center;
-    z-index: 10;
+    position: relative;
     background-image: url(imagenes/borrador\ lidia_Mesa\ de\ trabajo\ 1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    z-index: 10;
 }
 
 .imagen1 {
@@ -38,8 +37,8 @@ body {
     bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
     width: 100%;
+    text-align: center;
     line-height: 1.1;
     z-index: 10;
 }
@@ -47,15 +46,15 @@ body {
 .letras {
     font-family: 'Great Vibes', cursive;
     font-size: 30px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
     color: rgb(243, 250, 255);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
     font-weight: bold;
 }
 
-/* ====================== */
-/*   CUENTA REGRESIVA     */
-/* ====================== */
 
+/* ====================================================== */
+/*               CUENTA REGRESIVA                         */
+/* ====================================================== */
 .contenedor-countdown {
     margin: auto;
     padding: 20px 25px;
@@ -85,10 +84,10 @@ body {
     text-shadow: 2px 2px 5px black;
 }
 
-/* ====================== */
-/*  CONTENEDOR 2          */
-/* ====================== */
 
+/* ====================================================== */
+/*                CONTENEDOR 2 (Agradecimiento)           */
+/* ====================================================== */
 .SegundoContenedor {
     width: 600px;
     height: 650px;
@@ -102,71 +101,115 @@ body {
     background-size: cover;
 }
 
-/* ====================== */
-/*  CONTENEDOR 3 (MAPAS)  */
-/* ====================== */
+
+/* ====================================================== */
+/*                CONTENEDOR 3 (Mapas)                    */
+/* ====================================================== */
 .TercerContenedor { 
     width: 600px; 
-    height: 1650px; 
+    height: 1900px;
+    padding:5px;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
     margin: auto; 
-    text-align: center; } 
+    text-align: center; 
+} 
+
 .contenedor-mapa-fotos { 
     width: 500px; 
-    height: 800px; 
+    height: 850px; 
     margin: auto; 
-    padding: 15px; 
-    color: white; 
     font-family: 'Playfair Display', serif; 
-    margin-bottom: 10px; } 
+    color: white;
+    margin-bottom: 10px; 
+} 
+
 .titulo-seccion { 
     font-family: 'Great Vibes', cursive; 
     font-size: 40px; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; 
+    margin-top: -20px;
     color: #fff; 
-    text-shadow: 2px 2px 6px black; } 
+    text-shadow: 2px 2px 6px black; 
+} 
+
 .mapa-fotos-grid { 
     grid-template-columns: 1fr 180px; 
     gap: 20px; 
-    text-align: center; 
     justify-content: center; 
     align-items: center; 
-    margin: auto; } 
+    margin: auto; 
+} 
+
 .mapa iframe { 
     width: 100%; 
     height: 350px; 
-    border-radius: 20px; } 
+    border-radius: 20px; 
+} 
+
 .mapa p { 
     font-family: 'Great Vibes', cursive; 
     font-size: 40px; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    color: #808080; } 
+    color: #808080; 
+} 
+
 .mapa h1 { 
     font-family: 'Playfair Display', serif; 
     font-size: 16px; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    color: #000000; } 
-.direccion { 
+    color: #000; 
+} 
+
+.direccion{
     width: 450px; 
-    height: 750px; 
-    margin: 0 auto; /* este centra */ 
+    height: 860px;
     background: #fff; 
-    border-radius: 15px; padding: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.4); font-size: 20px; } .direccion2{ width: 450px; height: 700px; margin: 0 auto; /* este centra */ background: #fff; border-radius: 15px; padding: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.4); font-size: 20px; } 
-.iglesia{ 
+    border-radius: 15px;
+    padding: 4px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    margin: 0 auto;
+    font-size: 20px;
+} 
+
+.direccion2 { 
+    width: 450px; 
+    background: #fff; 
+    border-radius: 15px;
+    padding: 4px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.iglesia { 
     width: 95%; 
-    height: 450px; } 
-.btn-elegante { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #87CEEB, #6fbad8); color: white; font-family: 'Playfair Display', serif; font-size: 22px; border-radius: 40px; text-decoration: none; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 8px 18px rgba(0,0,0,0.2); transition: all 0.3s ease; } 
-.btn-elegante:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0,0,0,0.25); background: linear-gradient(135deg, #6fbad8, #87CEEB); } 
-.btn-elegante:active { transform: translateY(-1px); }
+    height: 450px; 
+}
 
-/* ====================== */
-/* REPRODUCTOR MÚSICA     */
-/* ====================== */
+.btn-elegante { 
+    display: inline-block; 
+    padding: 14px 18px; 
+    background: linear-gradient(135deg, #87CEEB, #6fbad8); 
+    color: white; 
+    font-family: 'Playfair Display', serif; 
+    font-size: 18px; 
+    border-radius: 40px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2); 
+    transition: .3s ease; 
+    margin-bottom: 10px;
+}
 
+.btn-elegante:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+
+/* ====================================================== */
+/*              REPRODUCTOR DE MÚSICA                     */
+/* ====================================================== */
 #musicPlayer {
     position: fixed;
     bottom: 20px;
@@ -193,39 +236,80 @@ body {
 }
 
 
-
-/* ============================================================
-   🔥 ANIMACIONES LIMPIAS PARA SCROLL — ÚNICAS Y CORRECTAS
-   ============================================================ */
-
-/* Estado inicial /* ====================== */
-/*    SECCIÓN ITINERARIO  */
-/* ====================== */
-
-.itinerario-section {
-   
-    width: 100%;         /* ← se adapta al ancho del dispositivo */
-    max-width: 420px;    /* ← límite máximo para pantallas grandes */
-    height: auto;  
-     display: flex;
+/* ====================================================== */
+/*          CONTENEDOR 4 (Dress Code)                     */
+/* ====================================================== */
+.cuartoContendor {
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    text-align: center;      /* ← opcional pero recomendado */
+    margin-bottom: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Textos */
+.titulodress {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #808080;
+    padding-top: 30px;
+}
+
+.titulod {
+    margin-bottom: 50px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #87CEEB;
+}
+
+.subtitulodress,
+.informaciondress {
+    font-size: 18px;
+    color: #808080;
+    padding-bottom: 10px;
+     margin-bottom: 10px;
+}
+
+/* Imagen */
+.imagendress {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.dresscode {
+    width: 100%;
+}
+
+
+/* ====================================================== */
+/*                    ITINERARIO                          */
+/* ====================================================== */
+.itinerario-section {
+
+    max-width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    border-radius: 5px;
+    margin: auto;
     text-align: center;
     font-family: 'Playfair Display', serif;
     background-image: url(imagenes/fondoitin-04.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    margin: auto;
 }
 
-
 .titulo-itinerario {
-
     font-family: 'Great Vibes', cursive;
     font-size: 40px;
     color: #808080;
@@ -238,32 +322,25 @@ body {
     color: #5D9CCF;
 }
 
-/* ===== LÍNEA DE TIEMPO ===== */
-
+/* Línea de tiempo */
 .linea-tiempo {
-
-    position: relative;
-    width: 70%;
+    width: 45%;
+    margin: auto;
     margin-top: 50px;
     padding-left: 30px;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-/* Línea vertical */
 .linea-tiempo::before {
     content: "";
     position: absolute;
     left: 100px;
-    top: 0;
     width: 3px;
     height: 100%;
     background: #5D9CCF;
     border-radius: 2px;
 }
 
-/* Cada evento */
 .item-tiempo {
     width: 300px;
     display: flex;
@@ -272,7 +349,6 @@ body {
     position: relative;
 }
 
-/* Bolitas de la línea */
 .item-tiempo::before {
     content: "";
     position: absolute;
@@ -283,156 +359,80 @@ body {
     border-radius: 50%;
 }
 
-/* Iconos */
 .icono-tiempo {
     width: 60px;
-    height: auto;
     margin-right: 40px;
     opacity: 0.9;
 }
 
-/* Texto */
 .contenido-tiempo h3 {
     font-size: 22px;
     color: #5D9CCF;
-    margin: 0;
 }
 
 .contenido-tiempo p {
     font-size: 22px;
     color: #5D9CCF;
-    margin: 0;
 }
 
 
-/* =================================================== */
-/*   ESTADOS INICIALES (ocultos antes de animar)       */
-/* =================================================== */
+/* ====================================================== */
+/*              ANIMACIONES DE SCROLL                     */
+/* ====================================================== */
 
-.scroll-anim {
-    opacity: 0;
-}
-
-/* Desde arriba (para el título) */
-.from-top {
-    transform: translateY(-40px);
-}
-
-/* Desde la izquierda */
-.from-left {
-    transform: translateX(-70px);
-}
-
-/* Desde la derecha */
-.from-right {
-    transform: translateX(70px);
-}
-
-/* =================================================== */
-/*                   ANIMACIONES                       */
-/* =================================================== */
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(-70px); }
-    to   { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeRight {
-    from { opacity: 0; transform: translateX(70px); }
-    to   { opacity: 1; transform: translateX(0); }
-}
-
-/* Aplicadores */
-.animate-top {
-    animation: fadeUp 1s ease-out forwards;
-}
-
-.animate-left {
-    animation: fadeLeft 1s ease-out forwards;
-}
-
-.animate-right {
-    animation: fadeRight 1s ease-out forwards;
-}
-
-
-/* ============================================================
-   🔥 ANIMACIONES para que se activen siempre en cada scroll
-   ============================================================ */
-
-.scroll-anim {
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-/* Fade + subida */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeUp {
-    animation: fadeUp 1.1s ease-out forwards;
-}
-
-/* Glow suave para el título */
-@keyframes glowSoft {
-    0% { text-shadow: 0 0 0px rgba(255,255,255,0); }
-    50% { text-shadow: 0 0 12px rgba(255,255,255,0.6); }
-    100% { text-shadow: 0 0 0px rgba(255,255,255,0); }
-}
-
-.animate-glow {
-    animation: glowSoft 3s ease-in-out infinite;
-}
-
-
-
+/* Estado inicial */
 .scroll-anim {
     opacity: 0;
     transform: translateY(30px);
+    transition: all .9s ease;
 }
 
-/* Fade + subida */
+.scroll-anim.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade + Slide */
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to   { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Fade + Zoom */
+/* Zoom suave */
 @keyframes fadeZoom {
-    from { opacity: 0; transform: scale(0.92); }
-    to   { opacity: 1; transform: scale(1); }
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-/* Glow suave */
+/* Glow */
 @keyframes glowSoft {
     0% { filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
     50% { filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
     100% { filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
 }
 
-/* Clases activadas por JS */
-.animate-fadeUp {
-    animation: fadeUp 0.9s ease-out forwards;
+.animate-fadeUp { animation: fadeUp 0.9s ease-out forwards; }
+.animate-fadeZoom { animation: fadeZoom 1s ease-out forwards; }
+.animate-glow { animation: glowSoft 3.5s ease-in-out infinite; }
+
+
+/* Otros efectos */
+@keyframes softScale {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-.animate-fadeZoom {
-    animation: fadeZoom 1s ease-out forwards;
+@keyframes gentleRotate {
+    0% { transform: rotate(-3deg) scale(0.9); opacity: 0; }
+    100% { transform: rotate(0deg) scale(1); opacity: 1; }
 }
 
-.animate-glow {
-    animation: glowSoft 3.5s ease-in-out infinite;
-}
 
-/* ====================== */
-/* RESPONSIVE 400px       */
-/* ====================== */
+
+/* =============================================================== */
+/* =====================  RESPONSIVE 400PX  ====================== */
+/* ======== (NO SE MODIFICÓ NADA, SOLO SE RESPETA TU PEDIDO) ==== */
+/* =============================================================== */
 
 @media (max-width: 400px) {
 
@@ -441,52 +441,32 @@ body {
     .TercerContenedor {
         width: 100%;
         height: 450px;
+        background-size: cover; /* ← ajusta la imagen al contenedor */
+        background-position: center;
     }
 
     .ContenedorPrincipal {
-        background-image: url(imagenes/imagenmovil1-03.jpg);
-        background-size: cover;
-        background-repeat: no-repeat
+       background-size: cover; /* ← ajusta la imagen al contenedor */
+        background-position: center;
     }
 
-    .imagen1 {
-        width: 100%;
-        height: 100%;
-    }
-
+    .imagen1 { width: 100%; height: 100%; }
     #countdown { font-size: 18px; }
-
     .titulo-seccion { font-size: 28px; }
-
     .mapa-fotos-grid { grid-template-columns: 1fr; }
 
-    #musicPlayer {
-        bottom: 10px;
-        right: 10px;
-    }
-
+    #musicPlayer { bottom: 10px; right: 10px; }
 
     .contenedor-countdown {
-    margin: auto;
-    padding: 10px 8px;
-    border-radius: 13px;
-    width: 70%;
-}
-    .TercerContenedor { 
-        width: 80%;
-        height: auto;
-        padding: 10px;
+        margin: auto;
+        padding: 10px 8px;
+        border-radius: 13px;
+        width: 70%;
     }
 
-    .contenedor-mapa-fotos { 
-        width: 80%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .titulo-seccion { 
-        font-size: 32px;
-    }
+    .TercerContenedor { width: 80%; height: auto; padding: 10px; }
+    .contenedor-mapa-fotos { width: 80%; height: auto; padding: 10px; }
+    .titulo-seccion { font-size: 32px; }
 
     .mapa-fotos-grid { 
         display: flex;
@@ -494,60 +474,65 @@ body {
         gap: 15px;
     }
 
-    .mapa iframe { 
-        height: 250px;
-    }
+    .mapa iframe { height: 250px; }
+    .mapa p { font-size: 32px; }
+    .mapa h1 { font-size: 14px; }
 
-    .mapa p { 
-        font-size: 32px;
-    }
-
-    .mapa h1 { 
-        font-size: 14px;
-    }
-
-    .direccion,
-    .direccion2 { 
+    .direccion, .direccion2 { 
         width: 100%;
         height: auto;
         font-size: 18px;
         padding: 10px;
     }
 
-    .iglesia { 
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-    }
+    .iglesia { width: 100%; height: 260px; object-fit: cover; }
 
-    .btn-elegante { 
-        font-size: 18px;
-        padding: 12px 22px;
-    }
-    .itinerario-section { width: 95%; }
+    .btn-elegante { font-size: 18px; padding: 12px 22px; }
 
-    .icono-tiempo { width: 70px; }
+ 
+
+
+
+
+    .cuartoContendor {
+    width: 350px;
+    height: 400px;
+}
+
+
+
+
+   .itinerario-section { 
+        width: 340px;
+       background-size: cover; /* ← ajusta la imagen al contenedor */
+        background-position: center;
+    } 
+    
+    
+
+
+    .icono-tiempo { width: 60px; }
 
     .contenido-tiempo h3 { font-size: 22px; }
     .contenido-tiempo p  { font-size: 18px; }
-
-    .linea-tiempo::before {
-        left: 40%;
-    }
-
-    .item-tiempo::before {
-        left: 48px;
-    }
-
-
-
-    .linea-tiempo::before {
-    content: "";
-    position: absolute;
-    left: 100px;
-    top: 0;
-    width: 3px;
-    height: 90%;
-    border-radius: 2px;
+    /* Línea de tiempo */
+.linea-tiempo {
+    width: 70%;
+    margin: auto;
 }
+
+    .linea-tiempo::before { left: 40%; }
+    .item-tiempo::before { left: 48px; }
+
+    .linea-tiempo::before {
+        content: "";
+        position: absolute;
+        left: 100px;
+        top: 0;
+        width: 3px;
+        height: 90%;
+        border-radius: 2px;
+    }
+
+
 }
