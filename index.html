@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <title>Mis XV Marisol</title>
+</head>
+<body>
+  <section class="ContenedorPrincipal">
+     <div class="Letrasenimagen">
+      <h1 class="letras">Mis XV Años</h1>
+      <p class="letras">Lidia Marisol</p>
+      <div class="contenedor-countdown">
+    <div id="countdown"></div>
+</div>
+
+    
+    </div>
+      
+  </section>
+ <!-- GOOGLE FONT ELEGANTE -->
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS (opcional si ya las usas) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<script>
+// FECHA OBJETIVO (26 diciembre 7 PM)
+let fechaObjetivo = new Date("December 26, 2025 19:00:00").getTime();
+
+let temporizador = setInterval(function() {
+    let ahora = new Date().getTime();
+    let diferencia = fechaObjetivo - ahora;
+
+    if (diferencia < 0) {
+        clearInterval(temporizador);
+        document.getElementById("countdown").innerHTML =
+            "¡El gran día ha llegado!";
+        return;
+    }
+
+    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        `${dias} días | ${horas} hrs | ${minutos} min | ${segundos} s`;
+}, 1000);
+</script>
+<div id="musicPlayer" autoplay loop>
+    <button id="musicBtn" autoplay loop>🔊</button>
+    <audio id="player" src="cancion/cancion.mp3" autoplay loop></audio>
+</div>
+
+<script>
+let audio = document.getElementById("player");
+let boton = document.getElementById("musicBtn");
+
+boton.addEventListener("click", () => {
+    if (audio.muted) {
+        audio.muted = false;
+        boton.textContent = "🔊";
+    } else {
+        audio.muted = true;
+        boton.textContent = "🔇";
+    }
+});
+</script>
+<section class="SegundoContenedor">
+
+</section>
+
+
+<section class="TercerContenedor">
+ <div class="contenedor-mapa-fotos">
+    <div class="titulo-seccion">Donde y Cuándo</div>
+
+    <div class="mapa-fotos-grid">
+
+        <!-- MAPA + DIRECCIÓN -->
+     
+            <div class="direccion">
+               <div class="mapa">
+                <p>Iglesia</p> 
+                <image src="imagenes/izamal.jpg" alt="Ubicación del evento" class="iglesia">
+                <p>Convento de San Antonio de Padua</p>
+                <h1>San Antonio de Padua, C. 31-A, Centro, 97540 Izamal, Yuc.</h1>
+               </div>
+               
+               <a class="btn-elegante" href="https://www.google.com/maps/search/?api=1&query=Convento+de+San+Antonio+de+Padua+Yucatan"
+   target="_blank" rel="noopener noreferrer">
+    Ver ubicación
+</a>
+            </div>
+            </div>
+    </div>
+     <div class="contenedor-mapa-fotos">
+    <div class="mapa-fotos-grid">
+        <!-- MAPA + DIRECCIÓN --> 
+            <div class="direccion2">
+               <div class="mapa">
+                <p>Recepción</p> 
+                <image src="imagenes/villabonita.jpg" alt="Ubicación del evento" class="iglesia">
+                <p>Villa Bonita</p>
+                <h1>C. 19-A 306B, Guadalupe, 97540 Guadalupe, Yuc.</h1>
+               </div>
+               
+               <a class="btn-elegante" href="https://maps.app.goo.gl/WdbfBp1RyKEMr9kD8"
+   target="_blank" rel="noopener noreferrer">
+    Ver ubicación
+</a>
+            </div>
+            </div>
+    </div>
+</div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // selector de los elementos que queremos animar al entrar/salir
+  const selectores = [
+    '.titulo-seccion',
+    '.letras',
+    '#countdown',
+    '.ContenedorPrincipal',
+    '.SegundoContenedor',
+    '.TercerContenedor',
+    '.contenedor-countdown',
+    '.direccion',
+    '.direccion2',
+    '.iglesia',
+    '.btn-elegante',
+    '.mapa iframe'
+  ];
+
+  const elementos = Array.from(document.querySelectorAll(selectores.join(',')));
+
+  // función que fuerza "replay" de una clase de animación
+  function replayAnimation(el, animClass) {
+    // quitar clase, forzar reflow, volver a añadir
+    el.classList.remove(animClass);
+    // forzar reflow -> garantiza que la animación pueda volver a reproducirse
+    void el.offsetWidth;
+    el.classList.add(animClass);
+  }
+
+  // función que decide qué animación aplicar según el elemento
+  function animClassFor(el) {
+    if (el.id === 'countdown') return 'animate-fadeZoom';
+    if (el.classList.contains('iglesia') || el.tagName === 'IFRAME' || el.classList.contains('btn-elegante')) return 'animate-fadeZoom';
+    // títulos y letras reciben además el brillo
+    if (el.classList.contains('titulo-seccion') || el.classList.contains('letras')) return 'animate-fadeUp';
+    // contenedores y direcciones
+    return 'animate-fadeUp';
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      const animClass = animClassFor(el);
+
+      if (entry.isIntersecting) {
+        // reproducir la animación (replay)
+        replayAnimation(el, animClass);
+
+        // si es titulo/letras, añadir también glow (no reaplica infinito cada vez)
+        if (animClass === 'animate-fadeUp' && (el.classList.contains('titulo-seccion') || el.classList.contains('letras'))) {
+          // quitar y reañadir glow para sincronizar si se desea
+          el.classList.remove('animate-glow');
+          void el.offsetWidth;
+          el.classList.add('animate-glow');
+        }
+
+        // asegurar visibilidad
+        el.classList.add('scroll-visible');
+
+      } else {
+        // al salir, quitar clases para que pueda volver a reproducirse la próxima vez
+        el.classList.remove(animClass);
+        el.classList.remove('animate-glow');
+        el.classList.remove('scroll-visible');
+      }
+    });
+  }, { threshold: 0.15 }); // ajustar sensibilidad si quieres
+
+  elementos.forEach(el => io.observe(el));
+});
+</script>
+
+
+
+<section class="itinerario-section" class="item-tiempo scroll-anim from-left">
+
+    <h2 class="titulo-itinerario scroll-anim">Itinerario</h2>
+    <p class="subtitulo-itinerario scroll-anim">¡Los detalles del gran día!</p>
+
+    <div class="linea-tiempo">
+
+        <!-- ITEM 1 -->
+        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>7:00 p.m.</h3>
+                <p>Misa</p>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>8:30 p.m.</h3>
+                <p>Recepción</p>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right" >
+            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>9:30 p.m.</h3>
+                <p>Presentación</p>
+            </div>
+        </div>
+
+         <!-- ITEM 4 -->
+        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-left">
+            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>10:00 p.m.</h3>
+                <p>Cena</p>
+            </div>
+        </div>
+
+         <!-- ITEM 5 -->
+        <div class="item-tiempo scroll-anim" class="item-tiempo scroll-anim from-right">
+            <img src="imagenes/iconoiglesia-05.png" class="icono-tiempo">
+            <div class="contenido-tiempo">
+                <h3>10:15 p.m.</h3>
+                <p>Vals</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+const elementos = document.querySelectorAll('.scroll-anim');
+
+function activarAnimaciones() {
+
+    let index = 0; // para alternar izquierda-derecha
+
+    elementos.forEach(el => {
+
+        const rect = el.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight - 60 && rect.bottom > 60;
+
+        if (!visible) return;
+
+        // Reiniciar animación
+        el.classList.remove("animate-left", "animate-right", "animate-top");
+
+        void el.offsetWidth; // fuerza reinicio
+
+        // Título y subtítulo animan desde arriba
+        if (el.classList.contains("titulo-itinerario") || 
+            el.classList.contains("subtitulo-itinerario")) {
+            el.classList.add("animate-top");
+            return;
+        }
+
+        // Items del itinerario → alternar izquierda/derecha
+        if (el.classList.contains("item-tiempo")) {
+            if (index % 2 === 0) {
+                el.classList.add("animate-left");
+            } else {
+                el.classList.add("animate-right");
+            }
+            index++;
+        }
+
+    });
+}
+
+window.addEventListener("scroll", activarAnimaciones);
+window.addEventListener("load", activarAnimaciones);
+</script>
+
+
+</body>
+</html>
