@@ -18,10 +18,23 @@ body {
     margin: auto;
     text-align: center;
     position: relative;
-    background-image: url(imagenes/borrador\ lidia_Mesa\ de\ trabajo\ 1.jpg);
+    /*background-image: url(imagenes/borrador\ lidia_Mesa\ de\ trabajo\ 1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    */
     z-index: 10;
+    
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.imagengrade {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .imagen1 {
@@ -52,6 +65,27 @@ body {
 }
 
 
+
+.rectangulo-gris{
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    right:0px;
+}
+
+.rectangulo-gris2{
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    left:0px;
+}
+.rectangulo-gris img {
+max-width: 100px;
+}
+.rectangulo-gris2 img {
+    max-width: 100px;
+     transform: rotate(180deg);
+}
 /* ====================================================== */
 /*               CUENTA REGRESIVA                         */
 /* ====================================================== */
@@ -96,9 +130,9 @@ body {
     justify-content: center;
     margin: auto;
     text-align: center;
-    background-image: url(imagenes/AGREDICIMIENTO-02.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    border-radius: 10px;
 }
 
 
@@ -255,6 +289,7 @@ body {
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
 /* Textos */
@@ -292,9 +327,57 @@ body {
 }
 
 
+
+
+/* ====================================================== */
+/*                    lluvia de sobres                         */
+/* ====================================================== */
+
+
+/* Textos */
+.titulodress2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #808080;
+    padding-top: -10px;
+}
+
+.titulod2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #87CEEB;
+}
+
+.subtitulodress2,
+.informaciondress2 {
+    margin: auto;
+    width: 400px;
+    font-size: 16px;
+    color: #808080;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+/* Imagen */
+.imagendress2 {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.dresscode2 {
+    width: 100%;
+}
+
+
 /* ====================================================== */
 /*                    ITINERARIO                          */
 /* ====================================================== */
+
+
+
 .itinerario-section {
     max-width: 600px;
     height: auto;
@@ -304,13 +387,33 @@ body {
     margin: auto;
     text-align: center;
     font-family: 'Playfair Display', serif;
-    background-image: url(imagenes/fondoitin-04.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     margin-bottom: 20px;
-    
+    background-color:#ffffff;
+    border-radius: 15px;
 }
+.itinerario-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+}
+
+/* IMAGEN DE FONDO */
+.imagengrade2 {
+    position: absolute;
+    inset: 0;              /* top:0 right:0 bottom:0 left:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* se comporta como background-size: cover */
+    z-index: 0;
+}
+
+/* CONTENIDO ENCIMA */
+.itinerario-section > *:not(.imagengrade2) {
+    position: relative;
+    z-index: 2;
+}
+
 
 .titulo-itinerario {
     font-family: 'Great Vibes', cursive;
@@ -795,6 +898,17 @@ font-family: 'Great Vibes', cursive;
         background-position: center;
     }
 
+
+    /* IMAGEN DE FONDO */
+.imagengrade2 {
+    position: absolute;
+    inset: 0;              /* top:0 right:0 bottom:0 left:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* se comporta como background-size: cover */
+    z-index: 0;
+}
+
     .ContenedorPrincipal {
        background-size: cover; /* ← ajusta la imagen al contenedor */
         background-position: center;
@@ -933,10 +1047,26 @@ font-family: 'Great Vibes', cursive;
     .SegundoContenedor,
     .TercerContenedor {
         width: 100%;
+        height:400px; /* un poco más compacto */
+
+    }
+
+    .TercerContenedor {
+        width: 100%;
         height: 1200px; /* un poco más compacto */
         background-size: cover;
         background-position: center;
     }
+
+    .imagengrande {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
     .imagen1 {
         width: 100%;
