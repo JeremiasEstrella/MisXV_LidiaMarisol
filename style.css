@@ -1202,7 +1202,7 @@ font-family: 'Great Vibes', cursive;
 }
 
 /* ================= RESPONSIVE 320px ================= */
-@media (max-width: 320px) {
+@media (min-width: 321px) and (max-width: 375px) {
 
     .bailarina {
         width: 70px;
@@ -1394,4 +1394,5 @@ font-family: 'Great Vibes', cursive;
 
 
 }
+
 
