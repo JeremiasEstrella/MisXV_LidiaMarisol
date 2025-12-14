@@ -1,15 +1,137 @@
-/* ====================================================== */
-/*                     ESTILOS BASE                       */
-/* ====================================================== */
+
+
+
+
 body {
     background-color: #AECBE9;
 }
+
+.bailarina {
+    width: 100px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    animation: gentleRotate 2s ease-in-out infinite;
+    z-index: 111;
+}
+
+.mariposas {
+    width: 40px;
+    position: relative;
+    bottom: -70px;
+    right: 60px;
+    z-index: 111;
+    animation: gentleRotate 2s ease-in-out infinite;
+    rotate: calc(260deg);
+}
+
+.mariposas2 {
+    width: 40px;
+    position: relative;
+    bottom: -70px;
+    left: 70px;
+      z-index: 111;
+    animation: gentleRotate 2s ease-in-out infinite;
+    rotate: calc(90deg);
+}
+/* ================= ANUNCIO DE INICIO ================= */
+
+.anuncio-inicio {
+    position: fixed;
+    inset: 0;
+    background: rgba(174, 203, 233, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: fadeInAnuncio 1s ease;
+    
+}
+
+.anuncio-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: zoomIn 1s ease;
+    max-width: 320px;
+    width: 90%;
+}
+
+.anuncio-titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    color: #5D9CCF;
+    margin-bottom: 10px;
+}
+
+.anuncio-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.anuncio-texto span {
+    display: block;
+    font-size: 26px;
+    color: #87CEEB;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.anuncio-btn {
+    background: linear-gradient(135deg, #87CEEB, #5D9CCF);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.anuncio-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* ================= ANIMACIONES ================= */
+
+@keyframes fadeInAnuncio {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes brilloSuave {
+    0% { text-shadow: 0 0 0 rgba(135,206,235,0); }
+    50% { text-shadow: 0 0 15px rgba(135,206,235,0.8); }
+    100% { text-shadow: 0 0 0 rgba(135,206,235,0); }
+}
+
+/* Ocultar anuncio */
+.anuncio-inicio.oculto {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
 
 
 /* ====================================================== */
 /*                CONTENEDOR PRINCIPAL                    */
 /* ====================================================== */
 .ContenedorPrincipal {
+    
     width: 600px;
     height: 650px;
     display: flex;
@@ -84,7 +206,7 @@ max-width: 100px;
 }
 .rectangulo-gris2 img {
     max-width: 100px;
-     transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 /* ====================================================== */
 /*               CUENTA REGRESIVA                         */
@@ -130,7 +252,6 @@ max-width: 100px;
     justify-content: center;
     margin: auto;
     text-align: center;
-  
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     border-radius: 10px;
 }
@@ -241,9 +362,6 @@ max-width: 100px;
 }
 
 
-/* ====================================================== */
-/*              REPRODUCTOR DE MÚSICA                     */
-/* ====================================================== */
 /* ====================================================== */
 /*              REPRODUCTOR DE MÚSICA                     */
 /* ====================================================== */
@@ -1167,4 +1285,3 @@ font-family: 'Great Vibes', cursive;
 
    
 }
-

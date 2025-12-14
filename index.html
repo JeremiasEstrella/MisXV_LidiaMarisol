@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,36 @@
   <title>Mis XV Marisol</title>
 </head>
 <body>
-  <section class="ContenedorPrincipal">
+
+
+    <div class="anuncio-inicio" id="anuncioInicio">
+      
+    <div class="anuncio-card">
+     
+      
+
+        <h1 class="anuncio-titulo">Bienvenidos</h1>
+        <p class="anuncio-texto">
+            a la invitación de<br>
+            <span>Lidia Marisol</span>
+        </p>
+
+          <img class="mariposas" src="imagenes/stickers-13.png" alt="">
+           <img class="bailarina" src="imagenes/stickers-12.png" alt="">
+          <img class="mariposas2" src="imagenes/stickers-13.png" alt="">
+        <button class="anuncio-btn" onclick="cerrarAnuncio()">
+            Abrir invitación
+        </button>
+           
+    </div>
+</div>
+
+
+
+
+
+
+ <section class="ContenedorPrincipal">
      <img class="imagengrande"  src="imagenes/borrador lidia_Mesa de trabajo 1.jpg" alt="">
      <div class="Letrasenimagen">
       <h1 class="letras">Mis XV Años</h1>
@@ -54,11 +84,45 @@ let temporizador = setInterval(function() {
 </script>
 
 <div id="musicPlayer">
-    <button id="musicBtn">
-        ▶️
-    </button>
-    <audio id="player" src="cancion/cancion.mp3"></audio>
+    <button id="musicBtn">▶️</button>
+    <audio id="player" src="cancion/cancion.mp3" loop></audio>
 </div>
+
+
+
+<script>
+const audio = document.getElementById("player");
+const musicBtn = document.getElementById("musicBtn");
+
+function cerrarAnuncio() {
+    const anuncio = document.getElementById("anuncioInicio");
+
+    // Ocultar anuncio
+    anuncio.classList.add("oculto");
+
+    setTimeout(() => {
+        anuncio.style.display = "none";
+    }, 1000);
+
+    // Reproducir música (acción del usuario ✔)
+    audio.play().then(() => {
+        musicBtn.textContent = "⏸️";
+    }).catch(() => {
+        console.log("Reproducción bloqueada");
+    });
+}
+
+// Botón play / pause
+musicBtn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        musicBtn.textContent = "⏸️";
+    } else {
+        audio.pause();
+        musicBtn.textContent = "▶️";
+    }
+});
+</script>
 
 
 
