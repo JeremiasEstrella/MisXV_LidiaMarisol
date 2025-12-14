@@ -42,121 +42,6 @@
     </div>
 </div>
 
-<script>
-let audio = document.getElementById("player");
-let boton = document.getElementById("musicBtn");
-
-// Desmutear y forzar play en el primer clic
-boton.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.muted = false;
-        audio.play(); // <-- Esto hace que sí arranque
-        boton.textContent = "🔊";
-        return;
-    }
-
-    // Alternar mute/unmute
-    if (audio.muted) {
-        audio.muted = false;
-        boton.textContent = "🔊";
-    } else {
-        audio.muted = true;
-        boton.textContent = "🔇";
-    }
-});
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-  // selector de los elementos que queremos animar al entrar/salir
-  const selectores = [
-    '.titulo-seccion',
-    '.letras',
-    '#countdown',
-    '.ContenedorPrincipal',
-    '.SegundoContenedor',
-    '.TercerContenedor',
-    '.contenedor-countdown',
-    '.direccion',
-    '.direccion2',
-    '.iglesia',
-    '.btn-elegante',
-    '.mapa iframe'
-  ];
-
-  const elementos = Array.from(document.querySelectorAll(selectores.join(',')));
-
-  // función que fuerza "replay" de una clase de animación
-  function replayAnimation(el, animClass) {
-    // quitar clase, forzar reflow, volver a añadir
-    el.classList.remove(animClass);
-    // forzar reflow -> garantiza que la animación pueda volver a reproducirse
-    void el.offsetWidth;
-    el.classList.add(animClass);
-  }
-
-  // función que decide qué animación aplicar según el elemento
-  function animClassFor(el) {
-    if (el.id === 'countdown') return 'animate-fadeZoom';
-    if (el.classList.contains('iglesia') || el.tagName === 'IFRAME' || el.classList.contains('btn-elegante')) return 'animate-fadeZoom';
-    // títulos y letras reciben además el brillo
-    if (el.classList.contains('titulo-seccion') || el.classList.contains('letras')) return 'animate-fadeUp';
-    // contenedores y direcciones
-    return 'animate-fadeUp';
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      const animClass = animClassFor(el);
-
-      if (entry.isIntersecting) {
-        // reproducir la animación (replay)
-        replayAnimation(el, animClass);
-
-        // si es titulo/letras, añadir también glow (no reaplica infinito cada vez)
-        if (animClass === 'animate-fadeUp' && (el.classList.contains('titulo-seccion') || el.classList.contains('letras'))) {
-          // quitar y reañadir glow para sincronizar si se desea
-          el.classList.remove('animate-glow');
-          void el.offsetWidth;
-          el.classList.add('animate-glow');
-        }
-
-        // asegurar visibilidad
-        el.classList.add('scroll-visible');
-
-      } else {
-        // al salir, quitar clases para que pueda volver a reproducirse la próxima vez
-        el.classList.remove(animClass);
-        el.classList.remove('animate-glow');
-        el.classList.remove('scroll-visible');
-      }
-    });
-  }, { threshold: 0.15 }); // ajustar sensibilidad si quieres
-
-  elementos.forEach(el => io.observe(el));
-});
-document.addEventListener("DOMContentLoaded", () => {
-
-    const items = document.querySelectorAll(".scroll-anim");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            } else {
-                // permite que se reactive cuando vuelves a bajar
-                entry.target.classList.remove("visible");
-            }
-        });
-    }, { threshold: 0.2 });
-
-    items.forEach(i => observer.observe(i));
-});
-</script>
-
 
  <section class="ContenedorPrincipal">
      <img class="imagengrande"  src="imagenes/imagenLidia3.jpeg" alt="">
@@ -545,7 +430,123 @@ musicBtn.addEventListener("click", () => {
 </script>
 
 
+<script>
+let audio = document.getElementById("player");
+let boton = document.getElementById("musicBtn");
+
+// Desmutear y forzar play en el primer clic
+boton.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play(); // <-- Esto hace que sí arranque
+        boton.textContent = "🔊";
+        return;
+    }
+
+    // Alternar mute/unmute
+    if (audio.muted) {
+        audio.muted = false;
+        boton.textContent = "🔊";
+    } else {
+        audio.muted = true;
+        boton.textContent = "🔇";
+    }
+});
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+  // selector de los elementos que queremos animar al entrar/salir
+  const selectores = [
+    '.titulo-seccion',
+    '.letras',
+    '#countdown',
+    '.ContenedorPrincipal',
+    '.SegundoContenedor',
+    '.TercerContenedor',
+    '.contenedor-countdown',
+    '.direccion',
+    '.direccion2',
+    '.iglesia',
+    '.btn-elegante',
+    '.mapa iframe'
+  ];
+
+  const elementos = Array.from(document.querySelectorAll(selectores.join(',')));
+
+  // función que fuerza "replay" de una clase de animación
+  function replayAnimation(el, animClass) {
+    // quitar clase, forzar reflow, volver a añadir
+    el.classList.remove(animClass);
+    // forzar reflow -> garantiza que la animación pueda volver a reproducirse
+    void el.offsetWidth;
+    el.classList.add(animClass);
+  }
+
+  // función que decide qué animación aplicar según el elemento
+  function animClassFor(el) {
+    if (el.id === 'countdown') return 'animate-fadeZoom';
+    if (el.classList.contains('iglesia') || el.tagName === 'IFRAME' || el.classList.contains('btn-elegante')) return 'animate-fadeZoom';
+    // títulos y letras reciben además el brillo
+    if (el.classList.contains('titulo-seccion') || el.classList.contains('letras')) return 'animate-fadeUp';
+    // contenedores y direcciones
+    return 'animate-fadeUp';
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      const animClass = animClassFor(el);
+
+      if (entry.isIntersecting) {
+        // reproducir la animación (replay)
+        replayAnimation(el, animClass);
+
+        // si es titulo/letras, añadir también glow (no reaplica infinito cada vez)
+        if (animClass === 'animate-fadeUp' && (el.classList.contains('titulo-seccion') || el.classList.contains('letras'))) {
+          // quitar y reañadir glow para sincronizar si se desea
+          el.classList.remove('animate-glow');
+          void el.offsetWidth;
+          el.classList.add('animate-glow');
+        }
+
+        // asegurar visibilidad
+        el.classList.add('scroll-visible');
+
+      } else {
+        // al salir, quitar clases para que pueda volver a reproducirse la próxima vez
+        el.classList.remove(animClass);
+        el.classList.remove('animate-glow');
+        el.classList.remove('scroll-visible');
+      }
+    });
+  }, { threshold: 0.15 }); // ajustar sensibilidad si quieres
+
+  elementos.forEach(el => io.observe(el));
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+    const items = document.querySelectorAll(".scroll-anim");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                // permite que se reactive cuando vuelves a bajar
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    items.forEach(i => observer.observe(i));
+});
+</script>
+
 
 
 </body>
+
 </html>
