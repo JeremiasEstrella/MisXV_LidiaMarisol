@@ -108,28 +108,29 @@
     
 }
 
+.octavoContendor {
+   margin-top: 10px;
+    
+}
+
 .container{
-    width: 100px;
+    width: 80px;
 }
 
 .slide .item:nth-child(3){
     bottom:10%;
-    left: 20%;
+    left: 10%;
 }
 .slide .item:nth-child(4){
-    left: calc(20% + 20px);
-}
-.slide .item:nth-child(5){
     left: calc(10% + 20px);
 }
-
-
-
-
+.slide .item:nth-child(5){
+    left: calc(5% + 20px);
+}
 
 /* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 8){
-    left: calc(20% + 20px);
+    left: calc(10% + 20px);
     opacity: 0;
 }
 
@@ -160,3 +161,4 @@
     }
 
 }
+
