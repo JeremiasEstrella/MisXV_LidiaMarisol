@@ -5,10 +5,6 @@
 body {
     background-color: #AECBE9;
 }
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
 
 
 .bailarina {
@@ -137,18 +133,14 @@ html, body {
 /* ====================================================== */
 .ContenedorPrincipal {
     
-    width: 600px;
-    height: 650px;
+    max-width:  600px;
+    max-height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
     text-align: center;
     position: relative;
-    /*background-image: url(imagenes/borrador\ lidia_Mesa\ de\ trabajo\ 1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
     z-index: 10;
     
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
@@ -166,8 +158,8 @@ html, body {
 
 .imagen1 {
     margin: auto;
-    width: 450px;
-    height: 650px;
+    max-width: 450px;
+    max-height: 650px;
     z-index: 1;
 }
 
@@ -250,8 +242,8 @@ max-width: 100px;
 /*                CONTENEDOR 2 (Agradecimiento)           */
 /* ====================================================== */
 .SegundoContenedor {
-    width: 600px;
-    height: 650px;
+    max-width: 600px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -266,9 +258,9 @@ max-width: 100px;
 /*                CONTENEDOR 3 (Mapas)                    */
 /* ====================================================== */
 .TercerContenedor { 
-    width: 600px; 
-    height: 1900px;
-    padding:5px;
+    max-width: 600px; 
+    height: 1950px;
+    padding:10px;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -277,26 +269,25 @@ max-width: 100px;
 } 
 
 .contenedor-mapa-fotos { 
-    width: 500px; 
-    height: 850px; 
+    max-width: 500px; 
+    max-height: 950px; 
     margin: auto; 
     font-family: 'Playfair Display', serif; 
     color: white;
-    margin-bottom: 10px; 
+
 } 
 
 .titulo-seccion { 
     font-family: 'Great Vibes', cursive; 
     font-size: 40px; 
-    margin-bottom: 30px; 
-    margin-top: -20px;
+    margin-bottom: 20px; 
     color: #fff; 
     text-shadow: 2px 2px 6px black; 
 } 
 
 .mapa-fotos-grid { 
     grid-template-columns: 1fr 180px; 
-    gap: 20px; 
+    gap: 5px; 
     justify-content: center; 
     align-items: center; 
     margin: auto; 
@@ -321,8 +312,8 @@ max-width: 100px;
 } 
 
 .direccion{
-    width: 450px; 
-    height: 860px;
+    max-width: 450px; 
+    max-height: 876px;
     background: #fff; 
     border-radius: 15px;
     padding: 4px;
@@ -332,7 +323,7 @@ max-width: 100px;
 } 
 
 .direccion2 { 
-    width: 450px; 
+    max-width: 450px; 
     background: #fff; 
     border-radius: 15px;
     padding: 4px;
@@ -419,7 +410,7 @@ max-width: 100px;
 /* Textos */
 .titulodress {
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 30px;
     color: #808080;
     padding-top: 30px;
 }
@@ -427,13 +418,13 @@ max-width: 100px;
 .titulod {
     margin-bottom: 50px;
     font-family: 'Great Vibes', cursive;
-    font-size: 50px;
+    font-size: 40px;
     color: #87CEEB;
 }
 
 .subtitulodress,
 .informaciondress {
-    font-size: 18px;
+    font-size: 16px;
     color: #808080;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -461,7 +452,7 @@ max-width: 100px;
 /* Textos */
 .titulodress2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 30px;
     color: #808080;
     padding-top: -10px;
 }
@@ -470,15 +461,15 @@ max-width: 100px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: 'Great Vibes', cursive;
-    font-size: 50px;
+    font-size: 35px;
     color: #87CEEB;
 }
 
 .subtitulodress2,
 .informaciondress2 {
     margin: auto;
-    width: 400px;
-    font-size: 16px;
+    max-width: 300px;
+    font-size: 14px;
     color: #808080;
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -528,7 +519,8 @@ max-width: 100px;
     inset: 0;              /* top:0 right:0 bottom:0 left:0 */
     width: 100%;
     height: 100%;
-    object-fit: cover;     /* se comporta como background-size: cover */
+    object-fit: contain;  /* muestra toda la imagen */
+object-fit: fill;     /* la deforma (no recomendado) */    /* se comporta como background-size: cover */
     z-index: 0;
 }
 
@@ -554,10 +546,10 @@ max-width: 100px;
 
 /* Línea de tiempo */
 .linea-tiempo {
-    width: 45%;
+    width: 50%;
     margin: auto;
     margin-top: 50px;
-    padding-left: 30px;
+    padding-left: 10px;
     position: relative;
 }
 
@@ -573,7 +565,7 @@ max-width: 100px;
 .item-tiempo::before {
     content: "";
     position: absolute;
-    left: 63px;
+    left: 60px;
     width: 18px;
     height: 18px;
     background: #5D9CCF;
@@ -582,12 +574,12 @@ max-width: 100px;
 
 .icono-tiempo {
     width: 60px;
-    margin-right: 40px;
+    margin-right: 10px;
     opacity: 0.9;
 }
 
 .contenido-tiempo h3 {
-    font-size: 22px;
+    font-size: 18px;
     color: #5D9CCF;
 }
 
@@ -617,7 +609,7 @@ max-width: 100px;
 /* Textos */
 .tituloconfirmacion {
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 35px;
     color: #808080;
     padding-top: 30px;
 }
@@ -627,7 +619,7 @@ max-width: 100px;
 .tituloc {
     margin-bottom: 20px;
     font-family: 'Great Vibes', cursive;
-    font-size: 30px;
+    font-size: 20px;
     color: #87CEEB;
 }
 
@@ -1010,34 +1002,25 @@ font-family: 'Great Vibes', cursive;
 /* =============================================================== */
 /* =====================  RESPONSIVE 400PX  ====================== */
 
-@media (max-width: 400px) {
-    .ContenedorPrincipal,
-    .SegundoContenedor,
-    .TercerContenedor {
-        width: 100%;
-        height: 450px;
-        background-size: cover;
-        background-position: center;
+@media (max-width: 400px)  and (min-width: 500px) {
+  
+   .ContenedorPrincipal,
+    .SegundoContenedor {
+        min-height: 60vh;
     }
 
+    .imagengrande {
+        max-height: 60vh;
+    }
 
-    /* IMAGEN DE FONDO */
-.imagengrade2 {
-    position: absolute;
-    inset: 0;             
-    width: 100%;
-    height: 100%;
-    object-fit: cover;    
-    z-index: 0;
-}
-
+ 
     .ContenedorPrincipal {
     background-size: cover;
     background-position: center;
     }
 
     .imagen1 { width: 100%; height: 100%; }
-    #countdown { font-size: 18px; }
+    #countdown { font-size: 18px;  }
     .titulo-seccion { font-size: 28px; }
     .mapa-fotos-grid { grid-template-columns: 1fr; }
 
@@ -1046,9 +1029,9 @@ font-family: 'Great Vibes', cursive;
 
     .contenedor-countdown {
         margin: auto;
-        padding: 10px 8px;
+        padding: 5px 5px;
         border-radius: 13px;
-        width: 70%;
+        width: 60%;
     }
 
     .TercerContenedor { width: 70%; height: auto; margin: auto;  }
@@ -1214,6 +1197,12 @@ font-family: 'Great Vibes', cursive;
 /* =============================== */
 @media  (min-width: 300px) and (max-width: 375px){
 
+ .contenedor-countdown {
+        margin: auto;
+        padding: 5px 5px;
+        border-radius: 13px;
+        width: 60%;
+    }
 
   .anuncio-card {
         padding: 25px 18px;
@@ -1241,18 +1230,25 @@ font-family: 'Great Vibes', cursive;
     .ContenedorPrincipal,
     .SegundoContenedor,
     .TercerContenedor {
-        width: 100%;
-        height:400px; /* un poco más compacto */
+        width: 80%;
+        height:350px; /* un poco más compacto */
 
     }
 
+  
+
     .TercerContenedor {
-        width: 100%;
+        width: 90%;
         height: 1200px; /* un poco más compacto */
         background-size: cover;
         background-position: center;
     }
 
+    .direccion{
+        height: 800px;
+        border: 1px red solid;
+
+    }
     .imagengrande {
     width: 100%;
     height: 100%;
@@ -1274,10 +1270,14 @@ font-family: 'Great Vibes', cursive;
     .titulo-seccion { font-size: 24px; }
 
     .contenedor-countdown {
-        width: 80%;
+        width: 60%;
         padding: 8px;
     }
 
+.SegundoContenedor {
+    width: 90%; 
+}
+    
     .mapa-fotos-grid {
         display: flex;
         flex-direction: column;
@@ -1304,9 +1304,43 @@ font-family: 'Great Vibes', cursive;
     /* --------- Secciones que tenías muy grandes -------- */
 
     .cuartoContendor {
-        width: 300px;  /* antes: 350px */
+        width: 250px;  /* antes: 350px */
         height: 360px;
     }
+   /* Textos */
+
+.titulodress2 {
+    font-size: 16px;
+    
+    padding-top: -10px;
+}
+
+.titulod2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.subtitulodress2,
+.informaciondress2 {
+    width: 200px;
+}
+
+/* Imagen */
+.imagendress2 {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.dresscode2 {
+    width: 100%;
+}
+
+
+.sextoContendor {
+    padding: 10px;
+    }   
 
     .itinerario-section {
         width: 300px; /* antes: 340px */
