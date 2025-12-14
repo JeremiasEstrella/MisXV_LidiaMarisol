@@ -5,6 +5,11 @@
 body {
     background-color: #AECBE9;
 }
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 
 .bailarina {
     width: 100px;
@@ -1046,7 +1051,7 @@ font-family: 'Great Vibes', cursive;
         width: 70%;
     }
 
-    .TercerContenedor { width: 80%; height: auto; padding: 10px; }
+    .TercerContenedor { width: 70%; height: auto; margin: auto;  }
     .contenedor-mapa-fotos { width: 80%; height: auto; padding: 10px; }
     .titulo-seccion { font-size: 32px; }
 
