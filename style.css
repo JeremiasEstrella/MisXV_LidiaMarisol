@@ -1,11 +1,5 @@
 
-
-html{
-    overflow-x: hidden;
-}
-
 body {
-    overflow-x: hidden;
     background-color: #80ABF0;
 }
 
@@ -974,6 +968,7 @@ font-family: 'Great Vibes', cursive;
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
 }
+
 
 
 
