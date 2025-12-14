@@ -108,17 +108,11 @@
     
 }
 
-.octavoContendor {
-   margin-top: 10px;
-    
-}
-
 .container{
     width: 80px;
 }
 
 .slide .item:nth-child(3){
-    bottom:10%;
     left: 10%;
 }
 .slide .item:nth-child(4){
@@ -127,6 +121,10 @@
 .slide .item:nth-child(5){
     left: calc(5% + 20px);
 }
+
+
+
+
 
 /* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 8){
@@ -161,4 +159,3 @@
     }
 
 }
-
