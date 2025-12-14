@@ -1155,7 +1155,8 @@ font-family: 'Great Vibes', cursive;
     left: calc(50% + 120px);
     opacity: 0;
 }
-.bailarina {
+
+  .bailarina {
         width: 70px;
     }
 
@@ -1198,35 +1199,21 @@ font-family: 'Great Vibes', cursive;
         padding: 12px 22px;
     }
 
-
 }
 
 /* ================= RESPONSIVE 320px ================= */
-@media (min-width: 321px) and (max-width: 375px) {
 
-    .bailarina {
-        width: 70px;
-    }
 
-    .mariposas,
-    .mariposas2 {
-        width: 28px;
-    }
+/* =============================== */
+/*   Ajustes para teléfonos 320px  */
+/* =============================== */
+@media  (min-width: 300px) and (max-width: 375px){
 
-    .mariposas {
-        bottom: -50px;
-        right: 40px;
-    }
 
-    .mariposas2 {
-        bottom: -50px;
-        left: 45px;
-    }
-
-    .anuncio-card {
+  .anuncio-card {
         padding: 25px 18px;
         border-radius: 20px;
-        max-width: 260px;
+        max-width: 150px;
     }
 
     .anuncio-titulo {
@@ -1246,17 +1233,6 @@ font-family: 'Great Vibes', cursive;
         font-size: 15px;
         padding: 12px 22px;
     }
-}
-
-
-
-/* =============================== */
-/*   Ajustes para teléfonos 320px  */
-/* =============================== */
-@media (max-width: 320px) {
-
-
-
     .ContenedorPrincipal,
     .SegundoContenedor,
     .TercerContenedor {
@@ -1394,5 +1370,3 @@ font-family: 'Great Vibes', cursive;
 
 
 }
-
-
