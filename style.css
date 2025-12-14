@@ -1155,7 +1155,48 @@ font-family: 'Great Vibes', cursive;
     left: calc(50% + 120px);
     opacity: 0;
 }
+.bailarina {
+        width: 70px;
+    }
 
+    .mariposas,
+    .mariposas2 {
+        width: 20px;
+    }
+
+    .mariposas {
+        bottom: -50px;
+        right: 40px;
+    }
+
+    .mariposas2 {
+        bottom: -50px;
+        left: 40px;
+    }
+
+    .anuncio-card {
+        padding: 25px 18px;
+        border-radius: 20px;
+        max-width: 200px;
+    }
+
+    .anuncio-titulo {
+        font-size: 38px;
+    }
+
+    .anuncio-texto {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .anuncio-texto span {
+        font-size: 20px;
+    }
+
+    .anuncio-btn {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
 
 
 }
@@ -1353,3 +1394,4 @@ font-family: 'Great Vibes', cursive;
 
 
 }
+
