@@ -1037,7 +1037,7 @@ font-family: 'Great Vibes', cursive;
     .mapa-fotos-grid { grid-template-columns: 1fr; }
 
     #musicPlayer { bottom: 5px; 
-        width: 20px;right: 0px; border: 1px red solid;}
+        width: 20px;left: 30px; }
 
     .contenedor-countdown {
         margin: auto;
@@ -1128,7 +1128,10 @@ font-family: 'Great Vibes', cursive;
 }
 
 
-
+.octavoContendor {
+   margin-top: 10px;
+    
+}
 
 
 
@@ -1344,9 +1347,5 @@ font-family: 'Great Vibes', cursive;
     left: calc(50% + 100px);
     opacity: 0;
 }
-
-
-
-
 
 }
