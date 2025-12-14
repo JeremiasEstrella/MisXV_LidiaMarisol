@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>Mis XV Marisol</title>
 
 </head>
@@ -55,81 +56,14 @@
     <div id="countdown"></div>
     
 </div>
-
-    
     </div>
-  
-    
   </section>
+
+
   <div id="musicPlayer">
     <button id="musicBtn">▶️</button>
     <audio id="player" src="cancion/cancion.mp3" loop></audio>
 </div>
-
-
-
-<script>
-// FECHA OBJETIVO (26 diciembre 7 PM)
-let fechaObjetivo = new Date("December 26, 2025 19:00:00").getTime();
-
-let temporizador = setInterval(function() {
-    let ahora = new Date().getTime();
-    let diferencia = fechaObjetivo - ahora;
-
-    if (diferencia < 0) {
-        clearInterval(temporizador);
-        document.getElementById("countdown").innerHTML =
-            "¡El gran día ha llegado!";
-        return;
-    }
-
-    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-    let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-        `${dias} días | ${horas} hrs | ${minutos} min | ${segundos} s`;
-}, 1000);
-</script>
-
-
-
-<script>
-const audio = document.getElementById("player");
-const musicBtn = document.getElementById("musicBtn");
-
-function cerrarAnuncio() {
-    const anuncio = document.getElementById("anuncioInicio");
-
-    // Ocultar anuncio
-    anuncio.classList.add("oculto");
-
-    setTimeout(() => {
-        anuncio.style.display = "none";
-    }, 1000);
-
-    // Reproducir música (acción del usuario ✔)
-    audio.play().then(() => {
-        musicBtn.textContent = "⏸️";
-    }).catch(() => {
-        console.log("Reproducción bloqueada");
-    });
-}
-
-// Botón play / pause
-musicBtn.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play();
-        musicBtn.textContent = "⏸️";
-    } else {
-        audio.pause();
-        musicBtn.textContent = "▶️";
-    }
-});
-</script>
-
-
 
 
 <section class="SegundoContenedor">
@@ -181,7 +115,6 @@ musicBtn.addEventListener("click", () => {
 </div>
 </section>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
@@ -327,9 +260,6 @@ Si deseas obsequiarme algo, será recibido con mucho cariño.</div>
 </div>
 </section>
 
-
-
-
 <section class="octavoContendor scroll-anim">
 
     <h2 class="titulo-fotos">Galería</h2>
@@ -339,11 +269,12 @@ Si deseas obsequiarme algo, será recibido con mucho cariño.</div>
 
         <div class="slide">
 
-            <div class="item" style="background-image: url(imagenes/ImagenLidia3.jpeg);"></div>
-            <div class="item" style="background-image: url(imagenes/ImagenLidia4.jpeg);"></div>
-            <div class="item" style="background-image: url(imagenes/ImagenLidia5.jpeg);"></div>
-            <div class="item" style="background-image: url(imagenes/ImagenLidia7.jpeg);"></div>
-            <div class="item" style="background-image: url(imagenes/ImagenLidia6.jpeg);"></div>
+            <div class="item" style="background-image: url(imagenes/imagenLidia2.jpeg);"></div>
+            <div class="item" style="background-image: url(imagenes/imagenLidia3.jpeg);"></div>
+            <div class="item" style="background-image: url(imagenes/imagenLidia4.jpeg);"></div>
+            <div class="item" style="background-image: url(imagenes/imagenLidia5.jpeg);"></div>
+            <div class="item" style="background-image: url(imagenes/imagenLidia6.jpeg);"></div>
+
         </div>
 
         <div class="button">
@@ -357,7 +288,6 @@ Si deseas obsequiarme algo, será recibido con mucho cariño.</div>
 
 
 <script>
-
 
 let next = document.querySelector('.next')
 let prev = document.querySelector('.prev')
@@ -443,8 +373,65 @@ Motivo: ${motivo ? motivo : "No especificado"}`;
 </script>
 
 
+<script>
+// FECHA OBJETIVO (26 diciembre 7 PM)
+let fechaObjetivo = new Date("December 26, 2025 19:00:00").getTime();
+
+let temporizador = setInterval(function() {
+    let ahora = new Date().getTime();
+    let diferencia = fechaObjetivo - ahora;
+
+    if (diferencia < 0) {
+        clearInterval(temporizador);
+        document.getElementById("countdown").innerHTML =
+            "¡El gran día ha llegado!";
+        return;
+    }
+
+    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        `${dias} días | ${horas} hrs | ${minutos} min | ${segundos} s`;
+}, 1000);
+</script>
 
 
+<script>
+const audio = document.getElementById("player");
+const musicBtn = document.getElementById("musicBtn");
+
+function cerrarAnuncio() {
+    const anuncio = document.getElementById("anuncioInicio");
+
+    // Ocultar anuncio
+    anuncio.classList.add("oculto");
+
+    setTimeout(() => {
+        anuncio.style.display = "none";
+    }, 1000);
+
+    // Reproducir música (acción del usuario ✔)
+    audio.play().then(() => {
+        musicBtn.textContent = "⏸️";
+    }).catch(() => {
+        console.log("Reproducción bloqueada");
+    });
+}
+
+// Botón play / pause
+musicBtn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        musicBtn.textContent = "⏸️";
+    } else {
+        audio.pause();
+        musicBtn.textContent = "▶️";
+    }
+});
+</script>
 
 
 <script>
@@ -470,6 +457,7 @@ boton.addEventListener("click", () => {
     }
 });
 </script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -560,6 +548,8 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(i => observer.observe(i));
 });
 </script>
+
+
 
 
 </body>
