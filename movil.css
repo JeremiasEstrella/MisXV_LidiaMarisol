@@ -133,7 +133,7 @@
     left: calc(70% + 20px);
 }
 .slide .item:nth-child(5){
-    left: calc(100% + 20px);
+    left: calc(70% + 20px);
 }
 
 
@@ -141,7 +141,7 @@
 
 
 /* here n = 0, 1, 2, 3,... */
-.slide .item:nth-child(n + 5){
+.slide .item:nth-child(n + 6){
     left: calc(60% + 20px);
     opacity: 20;
 }

@@ -1,8 +1,11 @@
 
 
-
+html{
+    overflow-x: hidden;
+}
 
 body {
+    overflow-x: hidden;
     background-color: #80ABF0;
 }
 
@@ -333,8 +336,10 @@ max-width: 100px;
 /* ====================================================== */
 #musicPlayer {
     position: fixed;
+    width: 20px;
+    height: 20px;
     bottom: 10%;
-    left: 65%;
+    left: 30%;
     background-color:#4774a5;
     backdrop-filter: blur(5px);
     padding: 10px;
