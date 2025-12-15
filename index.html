@@ -224,9 +224,6 @@ Si deseas obsequiarme algo, será recibido con mucho cariño.</div>
             <label>😊Nombre completo:</label>
             <input type="text" id="nombre" required>
 
-            <label>👥Número de personas:</label>
-            <input type="number" id="personas" min="1" required>
-
             <label>📝Mensaje adicional:</label>
             <textarea id="mensaje"></textarea>
 
@@ -302,7 +299,7 @@ prev.addEventListener('click', function(){
 
 
 
-const numWhats = "5219992467023"; // Número de WhatsApp con código de país
+const numWhats = "5219901447266"; // Número de WhatsApp con código de país
 
 /* BOTONES */
 let btnConfirmar = document.getElementById("btnConfirmar");
@@ -342,12 +339,10 @@ formAsistencia.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let nombre = document.getElementById("nombre").value;
-    let personas = document.getElementById("personas").value;
     let mensaje = document.getElementById("mensaje").value;
 
-    let texto = `CONFIRMACIÓN DE ASISTENCIA%0A
+    let texto = `CONFIRMACIÓN DE ASISTENCIA :D%0A
 Nombre: ${nombre}%0A
-Número de personas: ${personas}%0A
 Mensaje: ${mensaje}`;
 
     window.open(`https://wa.me/${numWhats}?text=${texto}`, "_blank");
@@ -360,7 +355,7 @@ formRechazo.addEventListener("submit", (e) => {
     let nombre = document.getElementById("nombreRechazo").value;
     let motivo = document.getElementById("motivoRechazo").value;
 
-    let texto = `NO ASISTIRÁ%0A
+    let texto = `NO ASISTIRÁ :C%0A
 Nombre: ${nombre}%0A
 Motivo: ${motivo ? motivo : "No especificado"}`;
 
